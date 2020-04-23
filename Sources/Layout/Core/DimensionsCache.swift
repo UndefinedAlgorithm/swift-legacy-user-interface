@@ -44,7 +44,6 @@ struct DimensionsCache {
       let proposedSpace = space(in: newValue.proposedSize, onAxis: axis)
       switch key {
       case .any:
-        precondition(proposedSpace < .infinity)
         _any = newValue
       case .zero:
         precondition(proposedSpace == 0)
