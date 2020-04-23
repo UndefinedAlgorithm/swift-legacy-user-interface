@@ -83,7 +83,7 @@ public struct HStackLayout<Content>: Layout {
     }
 
     // Compute flexibility levels for all children based on the proposed
-    // `0` and `infinity` values. and
+    // `0` and `infinity` values.
     caches
       .enumerated()
       .map { value in
