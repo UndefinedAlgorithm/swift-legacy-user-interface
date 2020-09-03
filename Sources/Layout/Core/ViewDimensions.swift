@@ -33,6 +33,15 @@ public struct ViewDimensions: Equatable {
   public subscript (explicit guide: VerticalAlignment) -> CGFloat? {
     alignments[guide]
   }
+
+  subscript (axis: Axis) -> CGFloat {
+    switch axis {
+    case .horizontal:
+      return width
+    case .vertical:
+      return height
+    }
+  }
 }
 
 extension CGSize {

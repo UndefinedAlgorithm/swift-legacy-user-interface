@@ -1,15 +1,15 @@
 import CoreGraphics
 import Wrappers
 
-public struct HStackLayout<Content>: Layout {
+public struct VStackLayout<Content>: Layout {
   var _layout: DirectionalStackLayout<Content>
 
-  var alignment: VerticalAlignment {
+  var alignment: HorizontalAlignment {
     switch _layout.alignment {
-    case .vertical(let alignment):
-      return alignment
-    case .horizontal:
+    case .vertical:
       fatalError("Impossible alignment")
+    case .horizontal(let alignment):
+      return alignment
     }
   }
 
@@ -27,12 +27,12 @@ public struct HStackLayout<Content>: Layout {
   }
 
   public init(
-    alignment: VerticalAlignment = .center,
+    alignment: HorizontalAlignment = .center,
     spacing: CGFloat = 0,
     @LayoutBuilder children: () -> [AnyLayout<Content>]
   ) {
     self._layout = DirectionalStackLayout(
-      alignment: .vertical(alignment),
+      alignment: .horizontal(alignment),
       spacing: spacing,
       children: children
     )
@@ -40,7 +40,7 @@ public struct HStackLayout<Content>: Layout {
 
   // FIXME: Remove this overload when `LayoutBuilder` is fully fixed.
   public init<T>(
-    alignment: VerticalAlignment = .center,
+    alignment: HorizontalAlignment = .center,
     spacing: CGFloat = 0,
     @LayoutBuilder children: () -> T
   ) where T: Layout, T.Content == Content {

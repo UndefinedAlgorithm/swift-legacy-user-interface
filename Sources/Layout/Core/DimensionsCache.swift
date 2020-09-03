@@ -117,10 +117,69 @@ public struct ProposedSize: Hashable {
     self.width = width
     self.height = height
   }
+
+  subscript (axis: Axis) -> CGFloat {
+    get {
+      switch axis {
+      case .horizontal:
+        return width
+      case .vertical:
+        return height
+      }
+    }
+    set {
+      switch axis {
+      case .horizontal:
+        width = newValue
+      case .vertical:
+        height = newValue
+      }
+    }
+  }
 }
 
 extension CGSize {
   public init(_ size: ProposedSize) {
     self.init(width: size.width, height: size.height)
+  }
+
+  subscript (axis: Axis) -> CGFloat {
+    get {
+      switch axis {
+      case .horizontal:
+        return width
+      case .vertical:
+        return height
+      }
+    }
+    set {
+      switch axis {
+      case .horizontal:
+        width = newValue
+      case .vertical:
+        height = newValue
+      }
+    }
+  }
+}
+
+extension CGPoint {
+  subscript (axis: Axis) -> CGFloat {
+    get {
+      switch axis {
+      case .horizontal:
+        return x
+      case .vertical:
+        return y
+      }
+    }
+    set {
+      switch axis {
+      case .horizontal:
+        x = newValue
+      case .vertical:
+        y = newValue
+      }
+    }
   }
 }
