@@ -19,7 +19,7 @@ struct DirectionalStackLayout<Content>: Layout {
     self.alignment = alignment
     self.spacing = spacing
     self.children = children()
-    precondition(self.children.isEmpty == false)
+//    precondition(self.children.isEmpty == false)
   }
 
   // FIXME: Remove this overload when `LayoutBuilder` is fully fixed.
