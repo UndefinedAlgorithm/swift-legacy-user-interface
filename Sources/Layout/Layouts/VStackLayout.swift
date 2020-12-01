@@ -38,16 +38,16 @@ public struct VStackLayout<Content>: Layout {
     )
   }
 
-  // FIXME: Remove this overload when `LayoutBuilder` is fully fixed.
-  public init<T>(
-    alignment: HorizontalAlignment = .center,
-    spacing: CGFloat = 0,
-    @LayoutBuilder children: () -> T
-  ) where T: Layout, T.Content == Content {
-    self.init(alignment: alignment, spacing: spacing) {
-      [children().wrapIntoAnyLayout()]
-    }
-  }
+//  // FIXME: Remove this overload when `LayoutBuilder` is fully fixed.
+//  public init<T>(
+//    alignment: HorizontalAlignment = .center,
+//    spacing: CGFloat = 0,
+//    @LayoutBuilder children: () -> T
+//  ) where T: Layout, T.Content == Content {
+//    self.init(alignment: alignment, spacing: spacing) {
+//      [children().wrapIntoAnyLayout()]
+//    }
+//  }
 
   public func build(_ traits: inout LayoutTraits) {
     _layout.build(&traits)

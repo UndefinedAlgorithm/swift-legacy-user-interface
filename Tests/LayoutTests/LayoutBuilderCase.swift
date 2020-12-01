@@ -9,14 +9,14 @@ final class LayoutBuilderCase: XCTestCase {
         _ = closure()
       }
 
-      // FIXME: Remove this when `LayoutBuilder` is fully fixed.
-      init<R>(
-        @LayoutBuilder _ closure: () -> R
-      ) where R: Layout, R.Content == T {
-        self.init {
-          [closure().wrapIntoAnyLayout()]
-        }
-      }
+//      // FIXME: Remove this when `LayoutBuilder` is fully fixed.
+//      init<R>(
+//        @LayoutBuilder _ closure: () -> R
+//      ) where R: Layout, R.Content == T {
+//        self.init {
+//          [closure().wrapIntoAnyLayout()]
+//        }
+//      }
     }
 
     _ = Foo {

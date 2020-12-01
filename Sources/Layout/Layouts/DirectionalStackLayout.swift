@@ -22,16 +22,16 @@ struct DirectionalStackLayout<Content>: Layout {
 //    precondition(self.children.isEmpty == false)
   }
 
-  // FIXME: Remove this overload when `LayoutBuilder` is fully fixed.
-  init<T>(
-    alignment: DirectionalAlignment,
-    spacing: CGFloat = 0,
-    @LayoutBuilder children: () -> T
-  ) where T: Layout, T.Content == Content {
-    self.init(alignment: alignment, spacing: spacing) {
-      [children().wrapIntoAnyLayout()]
-    }
-  }
+//  // FIXME: Remove this overload when `LayoutBuilder` is fully fixed.
+//  init<T>(
+//    alignment: DirectionalAlignment,
+//    spacing: CGFloat = 0,
+//    @LayoutBuilder children: () -> T
+//  ) where T: Layout, T.Content == Content {
+//    self.init(alignment: alignment, spacing: spacing) {
+//      [children().wrapIntoAnyLayout()]
+//    }
+//  }
 
   func build(_ traits: inout LayoutTraits) {
     sanitizeSize(traits.proposedSize)
