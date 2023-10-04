@@ -1,3 +1,5 @@
+import enum SwiftUI.ColorScheme
+
 extension Environment {
   enum _ColorSchemeKey: EnvironmentKey {
     static var defaultValue: ColorScheme {
