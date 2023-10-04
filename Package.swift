@@ -1,4 +1,4 @@
-// swift-tools-version:5.3
+// swift-tools-version:5.9
 
 import PackageDescription
 
@@ -25,7 +25,7 @@ let testTargets: [Target] = [
 
 let package = Package(
   name: "LegacyUI",
-  platforms: [.iOS(.v10), .macOS(.v10_12)],
+  platforms: [.iOS(.v15), .macOS(.v12)],
   products: [
     .library(name: "Layout", targets: ["Layout"]),
     .library(name: "LegacyUI", targets: ["LegacyUI"])
